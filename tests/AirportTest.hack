@@ -6,7 +6,7 @@ final class AirportTest extends HackTest {
     public function testAirportName(): void {
         $lhr = new Airport("LHR", vec[]);
         $airport_name = $lhr->getAirportName();
-        expect($airport_name)->toBeSame("LHR");
+        expect($airport_name)->toEqual("LHR");
     }
 
     public function testApron(): void {

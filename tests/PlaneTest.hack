@@ -34,6 +34,16 @@ final class PlaneTest extends HackTest {
         expect($passenger_pmi[0]['name'])->toEqual("Pam");
     }
 
+     public function testBags(): void {
+        $plane_pmi = new Plane("BA011", "PMI", vec[]);
+        $passenger_pam = new Passenger("Pam", vec[]);
+        $bag_pam = new Bag(10);
+        $passenger_pam->addBag($bag_pam->weight);
+        $plane_pmi->boardPassengers($passenger_pam);
+        $passenger_pmi = $plane_pmi->getPassengers();
+        expect(count($passenger_pmi[0]['bags']))->toEqual(1);
+    }
+
         public function testMultiPassengersAndBags(): void {
         $plane_pmi = new Plane("BA011", "PMI", vec[]);
         $passenger_pam = new Passenger("Pam", vec[]);

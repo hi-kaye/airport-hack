@@ -39,9 +39,11 @@ function main_planes(): void {
   \Facebook\AutoloadMap\initialize();
   $passenger_one = new Passenger("Boris", vec[]);
   $plane = new Plane("BA017", "DPS", vec[]);
-  $plane->boardPassengers($passenger_one->name);
+  $plane->boardPassengers($passenger_one);
+  $bag_one = new Bag(10);
+  $passenger_one->addBag($bag_one->weight);
   echo $plane->flight;
   echo $plane->destination;
-  $plane->getPassengers();
+  print_r($plane->getPassengers());
 
 } */
